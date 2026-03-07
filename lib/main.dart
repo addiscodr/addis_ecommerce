@@ -1,3 +1,4 @@
+import 'package:addis_ecommerce/pages/home_page.dart';
 import 'package:addis_ecommerce/pages/onboarding.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Onboarding(),
+      home: const HomePage(),
     );
   }
 }
