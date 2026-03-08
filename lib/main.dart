@@ -1,6 +1,7 @@
 import 'package:addis_ecommerce/pages/bottom_nav.dart';
 import 'package:addis_ecommerce/pages/login.dart';
 import 'package:addis_ecommerce/pages/product_detail.dart';
+import 'package:addis_ecommerce/pages/signup.dart';
 
 import 'pages/home.dart';
 import '../pages/onboarding.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: Login(),
+      home: Signup(),
     );
   }
 }

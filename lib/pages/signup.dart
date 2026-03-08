@@ -1,15 +1,15 @@
-import 'package:addis_ecommerce/pages/signup.dart';
+import 'package:addis_ecommerce/pages/login.dart';
 import 'package:addis_ecommerce/widgets/support_widget.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _LoginState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _LoginState extends State<Login> {
           children: [
             Image.asset("images/login_image.png"),
             SizedBox(height: 40),
-            Text("Sign In", style: AppWidget.btnTextStyle()),
+            Text("Sign Up", style: AppWidget.btnTextStyle()),
             const SizedBox(height: 20),
             Container(
               padding: EdgeInsets.only(left: 20),
@@ -52,27 +52,23 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  "Forgot passord? ",
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
+            const SizedBox(height: 20),
+            Container(
+              padding: EdgeInsets.only(left: 20),
+              decoration: BoxDecoration(
+                color: Color(0xfff4f5f9),
+                borderRadius: BorderRadius.circular(10),
+              ),
+
+              child: TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Confirm Password",
+                  prefixIcon: Icon(Icons.lock_outlined),
                 ),
-                Text(
-                  "Create",
-                  style: TextStyle(
-                    color: Colors.blueAccent,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
+              ),
             ),
+
             const SizedBox(height: 60),
             Container(
               width: MediaQuery.of(context).size.width,
@@ -83,7 +79,7 @@ class _LoginState extends State<Login> {
               ),
               child: Center(
                 child: Text(
-                  "Login",
+                  "Register",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 26,
@@ -97,7 +93,7 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "Don't have an account? ",
+                  "Already have an account? ",
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 18,
@@ -108,11 +104,11 @@ class _LoginState extends State<Login> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Signup()),
+                      MaterialPageRoute(builder: (context) => Login()),
                     );
                   },
                   child: Text(
-                    "Sign Up",
+                    "Sign In",
                     style: TextStyle(
                       color: Colors.blueAccent,
                       fontSize: 18,
