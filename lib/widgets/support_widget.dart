@@ -24,4 +24,12 @@ class AppWidget {
       fontWeight: FontWeight.bold,
     );
   }
+
+  static TextStyle btnTextStyle() {
+    return TextStyle(
+      color: Colors.black87,
+      fontSize: 30,
+      fontWeight: FontWeight.bold,
+    );
+  }
 }

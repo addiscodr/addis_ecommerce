@@ -1,4 +1,5 @@
 import 'package:addis_ecommerce/pages/bottom_nav.dart';
+import 'package:addis_ecommerce/pages/login.dart';
 import 'package:addis_ecommerce/pages/product_detail.dart';
 
 import 'pages/home.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: ProductDetail(),
+      home: Login(),
     );
   }
 }
