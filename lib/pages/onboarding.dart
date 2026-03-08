@@ -40,7 +40,7 @@ class _OnboardingState extends State<Onboarding> {
                   margin: EdgeInsets.only(right: 20),
                   padding: EdgeInsets.all(30),
                   decoration: BoxDecoration(
-                    color: Colors.black,
+                    color: Color(0xfffd6f3e),
                     shape: BoxShape.circle,
                   ),
                   child: const Text(
