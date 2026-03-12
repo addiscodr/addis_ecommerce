@@ -1,13 +1,15 @@
-import 'package:addis_ecommerce/pages/bottom_nav.dart';
-import 'package:addis_ecommerce/pages/login.dart';
-import 'package:addis_ecommerce/pages/product_detail.dart';
-import 'package:addis_ecommerce/pages/signup.dart';
-
+import '../pages/bottom_nav.dart';
+import '../pages/login.dart';
+import '../pages/product_detail.dart';
+import '../pages/signup.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'pages/home.dart';
 import '../pages/onboarding.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -21,9 +23,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: Onboarding(),
+      home: Login(),
     );
   }
 }
 
-// continue from 1:54:34
+// continue from 2:30:00

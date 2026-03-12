@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "263975888157",
+    "project_id": "addis-ecommerce-a0d4f",
+    "storage_bucket": "addis-ecommerce-a0d4f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263975888157:android:2ab672ad3cb0768a1fedf4",
+        "android_client_info": {
+          "package_name": "com.addiscodr.addis_ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArIlBZTr4Wntu5c6tTbRJh7SoFy3_OfSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
