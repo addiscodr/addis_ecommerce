@@ -1,9 +1,12 @@
 import 'package:addis_ecommerce/pages/bottom_nav.dart';
 import 'package:addis_ecommerce/pages/home.dart';
 import 'package:addis_ecommerce/pages/login.dart';
+import 'package:addis_ecommerce/services/database.dart';
+import 'package:addis_ecommerce/services/shared_pref.dart';
 import 'package:addis_ecommerce/widgets/support_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:random_string/random_string.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -35,6 +38,25 @@ class _LoginState extends State<Signup> {
             ),
           ),
         );
+        String id = randomAlphaNumeric(10);
+        await SharedPreferenceHelper().saveUserId(id);
+        await SharedPreferenceHelper().saveUserName(
+          _nameController.text.trim(),
+        );
+        await SharedPreferenceHelper().saveUserEmail(
+          _emailController.text.trim(),
+        );
+        await SharedPreferenceHelper().saveUserImage(
+          'https://picsum.photos/200',
+        );
+
+        Map<String, dynamic> userInfoMap = {
+          "Name": _nameController.text.trim(),
+          "Email": _emailController.text.trim(),
+          "Id": id,
+          "Image": "Image.network('https://picsum.photos/200'",
+        };
+        await DatabaseMethods().addUserDetails(userInfoMap, id);
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => BottomNav()),

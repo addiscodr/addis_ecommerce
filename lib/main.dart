@@ -1,10 +1,8 @@
-import '../pages/bottom_nav.dart';
-import '../pages/login.dart';
-import '../pages/product_detail.dart';
-import '../pages/signup.dart';
+import 'package:addis_ecommerce/admin/add_product.dart';
+import 'package:addis_ecommerce/admin/admin_login.dart';
+
 import 'package:firebase_core/firebase_core.dart';
-import 'pages/home.dart';
-import '../pages/onboarding.dart';
+
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -23,9 +21,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: Login(),
+      home: AddProduct(),
     );
   }
 }
 
-// continue from 2:30:00
+// continue from 3:19:19
