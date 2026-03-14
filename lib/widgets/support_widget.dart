@@ -17,6 +17,14 @@ class AppWidget {
     );
   }
 
+  static TextStyle lightSmallTextStyle() {
+    return TextStyle(
+      color: Colors.black54,
+      fontSize: 18,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
   static TextStyle semiBoldTextStyle() {
     return TextStyle(
       color: Colors.black87,

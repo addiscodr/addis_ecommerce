@@ -1,5 +1,7 @@
 import 'package:addis_ecommerce/admin/add_product.dart';
 import 'package:addis_ecommerce/admin/admin_login.dart';
+import 'package:addis_ecommerce/pages/bottom_nav.dart';
+import 'package:addis_ecommerce/pages/product_detail.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
@@ -21,9 +23,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: AddProduct(),
+      home: BottomNav(),
     );
   }
 }
 
-// continue from 3:19:19
+// continue from 3:45:45

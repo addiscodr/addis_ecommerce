@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Hey, Customer!", style: AppWidget.boldTextStyle()),
+            Text("Hey, Esayas!", style: AppWidget.boldTextStyle()),
             Text("Good Morning", style: AppWidget.lightTextStyle()),
             SizedBox(height: 30),
             Container(
@@ -268,20 +268,23 @@ class CategoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      margin: EdgeInsets.only(right: 20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-      ),
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        padding: EdgeInsets.all(20),
+        margin: EdgeInsets.only(right: 20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+        ),
 
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Image.asset(image, height: 50, width: 50, fit: BoxFit.cover),
-          Icon(Icons.arrow_forward),
-        ],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Image.asset(image, height: 50, width: 50, fit: BoxFit.cover),
+            Icon(Icons.arrow_forward),
+          ],
+        ),
       ),
     );
   }
