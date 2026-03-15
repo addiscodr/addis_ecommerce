@@ -59,7 +59,7 @@ class _AddProductState extends State<AddProduct> {
     }
   }
 
-  final List<String> categoryItems = ['Watch', 'Laptop', 'TV', 'Headphone'];
+  final List<String> categoryItems = ['Headphone', 'Laptop', 'TV', 'Watch'];
   String? value;
 
   @override

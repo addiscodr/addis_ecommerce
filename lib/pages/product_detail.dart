@@ -2,7 +2,18 @@ import 'package:addis_ecommerce/widgets/support_widget.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetail extends StatefulWidget {
-  const ProductDetail({super.key});
+  ProductDetail({
+    super.key,
+    required this.detail,
+    required this.image,
+    required this.name,
+    required this.price,
+  });
+
+  String image;
+  String name;
+  String detail;
+  String price;
 
   @override
   State<ProductDetail> createState() => _ProductDetailState();
@@ -12,37 +23,47 @@ class _ProductDetailState extends State<ProductDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfffef5f1),
-      body: Container(
-        padding: EdgeInsets.only(top: 50),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(left: 20),
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      border: Border.all(),
-                      borderRadius: BorderRadius.circular(30),
+      backgroundColor: const Color(0xfffef5f1),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              /// Top Section
+              Stack(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 20, top: 10),
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        border: Border.all(),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: const Icon(Icons.arrow_back_ios_new_outlined),
                     ),
-                    child: Icon(Icons.arrow_back_ios_new_outlined),
                   ),
+
+                  /// Product Image
+                  Center(
+                    child: Image.network(
+                      widget.image,
+                      height: 320, // reduced from 400
+                    ),
+                  ),
+                ],
+              ),
+
+              /// Bottom White Section
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 25,
                 ),
-                Center(
-                  child: Image.asset("images/headphone_icon2.png", height: 400),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.only(top: 20, left: 20, right: 20),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -53,35 +74,49 @@ class _ProductDetailState extends State<ProductDetail> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    /// Product Title + Price
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Headphone", style: AppWidget.boldTextStyle()),
+                        Expanded(
+                          child: Text(
+                            widget.name,
+                            style: AppWidget.boldTextStyle(),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                         Text(
-                          "\$150",
-                          style: TextStyle(
-                            color: const Color(0xfffd6f3e),
+                          "\$" + widget.price,
+                          style: const TextStyle(
+                            color: Color(0xfffd6f3e),
                             fontSize: 23,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ],
                     ),
+
                     const SizedBox(height: 20),
+
+                    /// Description Title
                     Text("Description", style: AppWidget.semiBoldTextStyle()),
-                    SizedBox(height: 10),
-                    Text(
-                      "The product is very good. It has a one year waranty. This headphone is very good.... ",
-                    ),
-                    SizedBox(height: 100),
+
+                    const SizedBox(height: 10),
+
+                    /// Description Text
+                    Text(widget.detail),
+
+                    const SizedBox(height: 40),
+
+                    /// Buy Button
                     Container(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 18),
                       decoration: BoxDecoration(
                         color: const Color(0xfffd6f3e),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      width: MediaQuery.of(context).size.width,
-                      child: Center(
+                      width: double.infinity,
+                      child: const Center(
                         child: Text(
                           "Buy Now",
                           style: TextStyle(
@@ -95,8 +130,8 @@ class _ProductDetailState extends State<ProductDetail> {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
